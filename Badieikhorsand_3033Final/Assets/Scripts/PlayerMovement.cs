@@ -75,7 +75,18 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Entering In Injured Zone
-       
+        if (other.gameObject.tag == "Injured")
+        {
+            if (playerInput.actions["Interaction"].triggered && !isCarrying)
+            {
+                other.GetComponent<InjuredScript>().isPickedUp = true;
+                
+                isCarrying = true;
+                playerAnimator.SetBool(isCarryingHash, isCarrying);
+            }
+            
+        }
+
     }
     private void OnTriggerStay(Collider other)
     {
@@ -84,11 +95,11 @@ public class PlayerMovement : MonoBehaviour
             if (playerInput.actions["Interaction"].triggered && !isCarrying)
             {
                 other.GetComponent<InjuredScript>().isPickedUp = true;
-                Debug.Log("Contact with Injured");
+                
                 isCarrying = true;
                 playerAnimator.SetBool(isCarryingHash, isCarrying);
             }
-            Debug.Log("yolo");
+         
         }
     }
     private void OnTriggerExit(Collider other)
