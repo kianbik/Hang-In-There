@@ -19,7 +19,7 @@
                     "id": "3008a081-3d19-43b3-a7ef-805d94aaf7e5",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 },
                 {
                     "name": "Pause",
@@ -90,7 +90,7 @@
                     "name": "",
                     "id": "634d896c-c682-49e9-9c87-97796c92aa52",
                     "path": "<Keyboard>/e",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Interaction",
@@ -101,7 +101,7 @@
                     "name": "",
                     "id": "86eb2f3a-57e6-4101-93dd-771fd069dedc",
                     "path": "<Keyboard>/space",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Interaction",

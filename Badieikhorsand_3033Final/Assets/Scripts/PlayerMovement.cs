@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rigidbody;
     Animator playerAnimator;
     PlayerInput playerInput;
+    public GameObject carryLocation;
 
 
     //Movement references
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Carrying
     public bool isCarrying;
+    public bool interactionPressed;
 
     //Hash
     public readonly int movementXHash = Animator.StringToHash("MovementX");
@@ -42,6 +44,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Move();
+       
+    }
+
+    public void Move()
+    {
         moveDirection = transform.forward * inputVector.y;
         moveDirectionY = transform.right * inputVector.x;
         Vector3 movementDirection = moveDirection * (walkSpeed * Time.deltaTime);
@@ -50,21 +58,37 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetFloat(movementXHash, inputVector.x);
         playerAnimator.SetFloat(movementYHash, inputVector.y);
     }
-
-
     public void OnMovement(InputValue value)
     {
         inputVector = value.Get<Vector2>();
     }
-    public void OnInteract(InputValue value)
+    public void OnInteraction(InputValue value)
     {
-        Debug.Log("interacted");
+        interactionPressed = value.isPressed;
     }
     private void OnTriggerEnter(Collider other)
     {
+        //Entering Toxic Fog
         if(other.gameObject.tag == "Fog")
         {
             Debug.Log("Entered Fog");
+        }
+
+        //Entering In Injured Zone
+       
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Injured")
+        {
+            if (playerInput.actions["Interaction"].triggered && !isCarrying)
+            {
+                other.GetComponent<InjuredScript>().isPickedUp = true;
+                Debug.Log("Contact with Injured");
+                isCarrying = true;
+                playerAnimator.SetBool(isCarryingHash, isCarrying);
+            }
+            Debug.Log("yolo");
         }
     }
     private void OnTriggerExit(Collider other)
