@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     Animator playerAnimator;
     PlayerInput playerInput;
     public GameObject carryLocation;
-
+    public PauseMenuScript pauseMenu;
 
     //Movement references
     public Vector2 inputVector = Vector2.zero;
@@ -44,8 +44,17 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
-       
+        if (!PauseMenuScript.isGamePaused)
+        {
+
+            Move();
+
+
+        }
+        if ((playerInput.actions["Pause"].triggered))
+        {
+            pauseMenu.Pause();
+        }
     }
 
     public void Move()

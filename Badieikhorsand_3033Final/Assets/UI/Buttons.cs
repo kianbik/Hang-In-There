@@ -7,6 +7,7 @@ public class Buttons : MonoBehaviour
     public GameObject MainMenuCanvas;
 
     public GameObject CreditsCanvas;
+    public GameObject InstructionsCanvas;
 
     public AudioClip HoverClip;
     public AudioClip ClickClip;
@@ -25,6 +26,11 @@ public class Buttons : MonoBehaviour
         CreditsCanvas.SetActive(true);
         MainMenuCanvas.SetActive(false);
     }
+    public void OnInstructionsClicked()
+    {
+        InstructionsCanvas.SetActive(true);
+        MainMenuCanvas.SetActive(false);
+    }
 
 
 
@@ -32,8 +38,8 @@ public class Buttons : MonoBehaviour
     {
 
         CreditsCanvas.SetActive(false);
+        InstructionsCanvas.SetActive(false);
 
-       
         MainMenuCanvas.SetActive(true);
     }
 
