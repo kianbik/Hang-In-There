@@ -2053,15 +2053,20 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'WASD: Move
 
-    Space: Pichup/Drop
-
     ESC: Pause
 
+    Rescue People from Toxic Fog
 
-    Rescue People
-    from Toxic Fog
+    Player
+    has 10 second to survive in the fog
 
-    Player has 10 second to survive in the fog'
+    When Player enters The Toxic Area a
+    timer will pop up
+
+    PickUp people By colliding to them and drop them into
+    tents
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 72f0d186044c3684c915f5f261bf7416, type: 2}
   m_sharedMaterial: {fileID: -7584610681710426578, guid: 72f0d186044c3684c915f5f261bf7416, type: 2}
@@ -2088,8 +2093,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 69.5
-  m_fontSizeBase: 69.5
+  m_fontSize: 63.54
+  m_fontSizeBase: 63.54
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
