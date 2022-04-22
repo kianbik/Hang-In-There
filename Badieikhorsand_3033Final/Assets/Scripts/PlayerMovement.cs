@@ -60,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
         numberOfInjuredInMap = GameObject.FindGameObjectsWithTag("Injured").Length;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -76,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
         if ((playerInput.actions["Pause"].triggered))
         {
             pauseMenu.Pause();
+            Cursor.visible = true;
         }
         if ((playerInput.actions["Interaction"].triggered))
         {
@@ -88,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
         {
             winCanvas.SetActive(true);
             isAlive = false;
+            Cursor.visible = true;
         }
     }
 
@@ -173,6 +176,7 @@ public class PlayerMovement : MonoBehaviour
                 playerAnimator.SetTrigger("Dead");
                 LoseCanvas.SetActive(true);
                 timerUI.SetActive(false);
+                Cursor.visible = true;
             }
             timerUI.SetActive(true);
             timerText.text = ((int)timer).ToString();
