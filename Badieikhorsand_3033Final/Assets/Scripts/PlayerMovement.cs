@@ -60,4 +60,18 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("interacted");
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Fog")
+        {
+            Debug.Log("Entered Fog");
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Fog")
+        {
+            Debug.Log("Exit from Fog");
+        }
+    }
 }

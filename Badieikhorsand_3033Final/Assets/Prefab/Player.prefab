@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1902489145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1902489146}
+  m_Layer: 0
+  m_Name: InjuredContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1902489146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902489145}
+  m_LocalRotation: {x: 0.09627108, y: 0.70052266, z: -0.09627108, w: -0.70052266}
+  m_LocalPosition: {x: -0.009999927, y: 0.17, z: 0.44000244}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2556571171816669134}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 15.65}
 --- !u!1 &2556571171816825344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,6 +1771,7 @@ Transform:
   - {fileID: 2556571171816669064}
   - {fileID: 2556571171816669132}
   - {fileID: 3895711098936769742}
+  - {fileID: 1902489146}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1805,7 +1836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
-  rotationSens: 4
+  rotationSens: 1
   inputVector: {x: 0, y: 0}
   isCarrying: 0
 --- !u!114 &1841031937
